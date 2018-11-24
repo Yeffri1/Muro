@@ -19,10 +19,10 @@ export default class SideBar extends Component {
                     </ul>
 
                     <ul className="side-icons">
-                        <li><a className="fb" href></a></li>
-                        <li><a className="twitt" href></a></li>
-                        <li><a className="goog" href></a></li>
-                        <li><a className="drib" href></a></li>
+                        <li><a className="fb" href='/'></a></li>
+                        <li><a className="twitt" href='/'></a></li>
+                        <li><a className="goog" href='/'></a></li>
+                        <li><a className="drib" href='/'></a></li>
                     </ul>
                 </div>
             </div>

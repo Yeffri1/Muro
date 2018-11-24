@@ -2,24 +2,28 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
-  Redirect,
-  Switch
+  BrowserRouter as Router
+
 } from 'react-router-dom'
 import Layout from './Layout';
-import Login from './Login';
-import Register from './Register';
+import login from './Login';
+import register from './Register';
 
 
 class App extends Component {
   render() {
     return (
-       <Layout>
-           <Route path='/Login' component={Login} />
-            <Route path='/Register' component={Register} />
-       </Layout>
+      <Layout>
+        <Router>
+          <Route exact path='/' />
+          <Route path='/Login' component={login} />
+          <Route path='/Register' component={register} />
+          <Route path='/counter' component={Counter} />
+
+        </Router>
+
+      </Layout>
     );
   }
 }
