@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 export default class SideBar extends Component {
     render() {
         return (
             <div className="col-md-3 top-nav">
                 <div className="logo">
-                    <a href="index.html"><h1>Blogger</h1></a>
+                    <a href="index.html"><h1>Muro</h1></a>
                 </div>
                 <div className="top-menu">
                     <span className="menu"> </span>
@@ -19,10 +19,10 @@ export default class SideBar extends Component {
                     </ul>
 
                     <ul className="side-icons">
-                        <li><a className="fb" href='/'></a></li>
-                        <li><a className="twitt" href='/'></a></li>
-                        <li><a className="goog" href='/'></a></li>
-                        <li><a className="drib" href='/'></a></li>
+                        <li><a className="fb" href="#"></a></li>
+                        <li><a className="twitt" href="#"></a></li>
+                        <li><a className="goog" href="#"></a></li>
+                        <li><a className="drib" href="#"></a></li>
                     </ul>
                 </div>
             </div>
