@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
 export default class SideBar extends Component {
+    
+    constructor(props){
+        super(props);
+        var i = 0;
+        var m1 = [1,2,3];
+    }
+    
     render() {
         return (
             <div className="col-md-3 top-nav">
@@ -10,7 +17,8 @@ export default class SideBar extends Component {
                     <span className="menu"> </span>
 
                     <ul className="cl-effect-16">
-                        <li><a className="active" href="index.html" data-hover="HOME">Home</a></li>
+                       
+                        <li><a className="active" href="index.html" data-hover="H-OME">Home</a></li>
                         <li><a href="about.html" data-hover="About">About</a></li>
                         <li><a href="grid.html" data-hover="Grids">Grids</a></li>
                         <li><a href="services.html" data-hover="Services">Services</a></li>

@@ -4,10 +4,12 @@ var concatenador = (separador,...args) => {
     args.forEach(n => result += n + separador);
     return result;
 }
-var usuariosAcciones = {
-    consultar:concatenador('/',restApi,'users','usIndex'),
-    registrarUsuario:concatenador('/',restApi,'users','registrarUsuario'),
-    loginUsuario:concatenador('/',restApi,'users','loginUsuario'),
+var httpRequests = {
+    consultar:concatenador('/',restApi,'restApi','usIndex'),
+    registrarUsuario:concatenador('/',restApi,'restApi','registrarUsuario'),
+    loginUsuario:concatenador('/',restApi,'restApi','loginUsuario'),
+    allPosts:concatenador('/',restApi,'restApi','allPosts'),
+
 }
 var config = {
     restApi:restApi
@@ -18,4 +20,4 @@ var config = {
         // }).then((data) =>{
         //     console.log(data);
         // })
-module.exports = {config, concatenador,usuariosAcciones};
+module.exports = {config, concatenador,httpRequests};

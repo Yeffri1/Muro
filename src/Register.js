@@ -30,7 +30,7 @@ class Register extends Component {
             confirmpassword: objeto.confirmpassword
         };
       
-        fetch(configApp.usuariosAcciones.registrarUsuario, { method: 'POST', body: JSON.stringify(usuario) })
+        fetch(configApp.httpRequests.registrarUsuario, { method: 'POST', body: JSON.stringify(usuario) })
             .then((response) => {
                 response = response || {};
                 if (response.ok) {

@@ -9,6 +9,8 @@ import {
 import Login from './Login';
 import Register from './Register';
 import SideBar from './SideBar';
+import ManagerPosts from './ManagerPosts';
+
 
 
 
@@ -23,7 +25,7 @@ export default class Layout extends Component {
                     <div className="h-top" id="home">
                         <div className="top-header">
                             <ul className="cl-effect-16 top-nag">
-                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/ManagerPosts">Home</Link></li>
                                 <li><Link to='/Login' data-hover="Login">Login</Link></li>
                                 <li><Link to='/Register' data-hover="Registration">Registration</Link></li>
                             </ul>
@@ -37,6 +39,7 @@ export default class Layout extends Component {
                        <SideBar />
                         <div className="col-md-9 main">
                             <Switch>
+                                <Route path='/ManagerPosts' component={ManagerPosts} />
                                 <Route path='/Login' component={Login} />
                                 <Route path='/Register' component={Register}/>
                             </Switch>

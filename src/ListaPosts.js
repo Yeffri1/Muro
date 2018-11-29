@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
-export default class ListaPosts extends Component {
-    render() {
-        return (
 
+export default class ListaPosts extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+    render() {
+        const posts = this.props.posts || [];
+        return (
             <div className="top-news">
                 <div className="top-inner">
                     <div className="col-md-6 top-text">
@@ -31,6 +37,12 @@ export default class ListaPosts extends Component {
                     </div>
                     <div className="clearfix"> </div>
                     {/*   AQUI VAN LOS POSTS  */}
+                    {Object.keys(posts).map((k, i) => {
+                        let data = posts[k];
+                        return (
+                            <h2>{data.post}</h2>
+                        );
+                    })}
                 </div>
             </div>
         );
