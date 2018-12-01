@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {
-  Route,
-  BrowserRouter as Router
-
-} from 'react-router-dom'
 import Layout from './Layout';
 
 class App extends Component {

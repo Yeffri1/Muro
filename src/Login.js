@@ -12,34 +12,20 @@ export default class Login extends Component {
     }
     handleChange(event) {
         let name = event.target.name;
+
         this.setState({ [name]: event.target.value });
     };
-
-    loginUsuario = () => {
-        // debugger;
-         let objeto = this.state;
-         let usuario = {
-             email: objeto.email,
-             password: objeto.password
-         };
-       
-         fetch(configApp.usuariosAcciones.loginUsuario, { method: 'POST', body: JSON.stringify(usuario) })
-             .then((response) => {
-                 response = response || {};
-                 if (response.ok) {
-                     return response.json();
-                 }
-                 alert(response.message);
-             }).then((resultado) => {
-                 resultado = resultado || {};
-                 if (resultado.Error == 0) {
-                     alert('Agregado')
-                 }
-                 else {
-                     alert('Error ' + resultado.msg);
-                 }
-             });
-     }
+    // loguear = () =>{
+    //     fetch(configApp.httpRequests.loginUsuario, { method: 'GET' }).then((response) => {
+    //         return response.json();
+    //     }).then((resultado) => {
+    //         if(resultado.auth === true){
+    //             sessionStorage.setItem('tokenUsuario',resultado.token);
+    //         }
+    //         console.log(resultado);
+    //     });
+    // }
+ 
 
     render() {
         return (
@@ -49,13 +35,12 @@ export default class Login extends Component {
                         <h3 className="tittle">Login <i className="glyphicon glyphicon-lock"></i></h3>
                         <p>Bienvenido, Favor Digitar sus datos</p>
                         <p>If you have previously Login with us, <a href="/">click here</a></p>
-                        <form onSubmit={this.loginUsuario}>
+                        <form method="post" action={configApp.httpRequests.loginUsuario}>
                             <h5>User Name:</h5>
-                            <input type="text" name='email'  />
+                            <input type="text" name='usuario' />
                             <h5>Password:</h5>
-                            <input type="password" name='password'/>
-                            <input type='submit' value='Login' /> 
-
+                            <input type="password" name='clave' />
+                            <input type='submit' value='Login' />
                         </form>
                     </div>
 

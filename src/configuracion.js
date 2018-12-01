@@ -5,11 +5,15 @@ var concatenador = (separador,...args) => {
     return result;
 }
 var httpRequests = {
-    consultar:concatenador('/',restApi,'restApi','usIndex'),
-    registrarUsuario:concatenador('/',restApi,'restApi','registrarUsuario'),
-    loginUsuario:concatenador('/',restApi,'restApi','loginUsuario'),
+    registrarUsuario:concatenador('/',restApi,'restApi','register'),
+    loginUsuario:concatenador('/',restApi,'restApi','login'),
     allPosts:concatenador('/',restApi,'restApi','allPosts'),
+    registrarPost:concatenador('/',restApi,'restApi','registrarPost'),
+    verificarAuth:concatenador('/',restApi,'restApi','verificarAuth'),
+    logout:concatenador('/',restApi,'restApi','logout'),
 
+
+    
 }
 var config = {
     restApi:restApi
