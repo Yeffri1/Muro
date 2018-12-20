@@ -8,8 +8,6 @@ export default class MantPost extends Component {
         this.verifyAuth = this.verifyAuth.bind(this);
         this.guardar = this.guardar.bind(this);
         this.handleChange = this.handleChange.bind(this);
-
-
     }
     componentDidMount() {
         this.verifyAuth();
@@ -32,12 +30,6 @@ export default class MantPost extends Component {
         fetch(configApp.httpRequests.registrarPost, { method: 'POST', mode: 'no-cors', headers: { 'content-Type': 'application/x-www-form-urlencoded' }, body: `titulo=${post.titulo}&post=${post.post}` }
         ).then((response) => {
             alert('agregado');
-            
-            if (response.ok) {
-                document.getElementByName('post').value = '';
-                document.getElementByName('titulo').value = '';
-
-            }
             console.log(response)
 
         }).catch((err) => {
@@ -65,9 +57,7 @@ export default class MantPost extends Component {
                     <form>
                         <input type="text" alue={this.state.titulo}  name='titulo' onChange={this.handleChange} placeholder='Title' />
                         <textarea name='post' value={this.state.post}  onChange={this.handleChange} placeholder='Your Comment...'></textarea>
-
                         <input type="hidden" name='Fecha' hidden value={new Date().getTime()} />
-
                         <input type="button" value="Submit Post" onClick={this.guardar} />
                     </form>
 
@@ -77,7 +67,7 @@ export default class MantPost extends Component {
         else {
             return (
                 <div className="coment-form" style={stylePost}>
-                    <h2>No Autorizado o se vencio su seccion</h2>
+                    <h2>No Autorizado o se venció su sección</h2>
                 </div>
             );
         }
